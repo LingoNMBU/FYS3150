@@ -1,0 +1,37 @@
+#include <vector>
+#include <iostream>
+
+
+double eval_u(double x)
+{
+   return 1. - (1. - std::exp(-10.)) * x - std::exp(-10. * x);
+}
+
+int main ()
+{
+std::vector<double> x;
+std::vector<double> u;
+double step;
+double end;
+double start;
+int npoints;
+int i;
+double eval_u(double x); 
+
+start = 0.;
+end = 1.;
+npoints = 100;
+step = (end-start)/npoints;
+
+
+
+for (int i = 0; i < npoints; i++){
+    x[i] = start + i*step;
+    u[i] = eval_u(x[i]);
+    std::cout << x[i];
+    std::cout << u[i];
+}
+
+
+return 0
+}
