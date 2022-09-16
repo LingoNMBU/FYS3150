@@ -13,40 +13,39 @@ double eval_u(double x)
 
 int main ()
 {
-// declarations
-arma::vec x;
-arma::vec u;
-double step;
-double end;
-double start;
-int npoints;
-int i;
-double eval_u(double x);
-std::ofstream ofile;
-int precision;
-std::string filename = "function_values";
+    // declarations
+    arma::vec x;
+    arma::vec u;
+    double step;
+    double end;
+    double start;
+    int npoints;
+    int i;
+    int width;
+    double eval_u(double x);
+    std::ofstream ofile;
+    int precision;
+    std::string filename = "x_u_exact";
 
 
-ofile.open(filename);
+    ofile.open(filename);
 
-start = 0.;
-end = 1.;
-npoints = 100;
-step = (end-start)/npoints;
-precision = 6;
-x = arma::vec(npoints);
-u = arma::vec(npoints);
+    start = 0.;
+    end = 1.;
+    npoints = 100;
+    step = (end-start)/npoints;
+    precision = 6;
+    width = 14;
+    x = arma::vec(npoints);
+    u = arma::vec(npoints);
 
 
-for (int i = 0; i < npoints; i++){
-    x(i) = start + i*step;
-    u(i) = eval_u(x(i));
-    std::cout << x(i);
-    std::cout << u(i);
-}
-
-ofile << std::setprecision(precision) << std::scientific << x;
-ofile << std::setprecision(precision) << std::scientific << u;
-
-return 0;
+    for (int i = 0; i < npoints; i++){
+        x(i) = start + i*step;
+        u(i) = eval_u(x(i));
+        ofile << std::setw(width) <<std::setprecision(precision) << std::scientific << x(i)
+              << std::setw(width) <<std::setprecision(precision) << std::scientific << u(i)
+              << std::endl;
+    }
+    return 0;
 }
