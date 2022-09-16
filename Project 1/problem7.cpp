@@ -45,7 +45,7 @@ int main ()
     //double g_t1;
     //double g_t2;
 
-    npoints = 1000; //including endpoints
+    npoints = 1000000; //including endpoints
     startpoint = 0.;
     startvalue = 0.;
     endpoint = 1.;
@@ -123,24 +123,24 @@ int main ()
     ofile5 << std::setw(width) << std::setprecision(precision) << std::scientific << duration_s_seconds;
     ofile5.close();
 
-    std::ofstream ofile;
-    ofile.open(filename);    
-    ofile << std::setw(width) << std::fixed << std::setprecision(precision) << std::scientific << x;
-    ofile << std::setw(width) << std::fixed << std::setprecision(precision) << std::scientific << v_gen_vals;
-    ofile.close();
+    //std::ofstream ofile;
+    //ofile.open(filename);    
+    //ofile << std::setw(width) << std::fixed << std::setprecision(precision) << std::scientific << x;
+    //ofile << std::setw(width) << std::fixed << std::setprecision(precision) << std::scientific << v_gen_vals;
+    //ofile.close();
 
-    std::ofstream ofile2;
-    ofile2.open(filename2);    
-    ofile2 << std::setw(width) <<  std::setprecision(precision) << std::scientific << x;
-    ofile2 << std::setw(width) <<  std::setprecision(precision) << std::scientific << v_spec_vals;
-    ofile2.close();
+    //std::ofstream ofile2;
+    //ofile2.open(filename2);    
+    //ofile2 << std::setw(width) <<  std::setprecision(precision) << std::scientific << x;
+    //ofile2 << std::setw(width) <<  std::setprecision(precision) << std::scientific << v_spec_vals;
+    //ofile2.close();
 
-    std::ofstream ofile3;
-    std::string filename3 = "Prob7_u" + std::to_string(npoints);
-    ofile3.open(filename3);    
-    ofile3 << std::setw(width) << std::setprecision(precision) << std::scientific << x;
-    ofile3 << std::setw(width) << std::setprecision(precision) << std::scientific << u;
-    ofile3.close();
+    //std::ofstream ofile3;
+    //std::string filename3 = "Prob7_u" + std::to_string(npoints);
+    //ofile3.open(filename3);    
+    //ofile3 << std::setw(width) << std::setprecision(precision) << std::scientific << x;
+    //ofile3 << std::setw(width) << std::setprecision(precision) << std::scientific << u;
+    //ofile3.close();
 
     return 0;
 }
